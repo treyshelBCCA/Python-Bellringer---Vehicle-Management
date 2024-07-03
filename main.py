@@ -8,25 +8,48 @@ class Vehicle:
     year: int
     details: dict 
 
+
+
 def add_vehicle(vehicles, id, make, model, year, details):
-    pass
+    car = Vehicle(id, make, model, year, details)
+    vehicles.append(car)
     return "Vehicle added successfully!"
 
 def view_vehicles(vehicles):
     if not vehicles:
         return "No vehicles available."
     else:
-        pass
+        return vehicles
 
 def update_vehicle(vehicles, id, make=None, model=None, year=None, details=None):
     for vehicle in vehicles:
         if vehicle.id == id:
-            pass
+            if make != "":
+                vehicle.make = make
+            else:
+                pass
+            if make != "":
+                vehicle.model = model
+            else:
+                pass
+            if year != "":
+                vehicle.year = year
+            else:
+                pass
+            if details != "":
+                vehicle.details = details
+            else:
+                pass
             return "Vehicle updated successfully!"
     return "Vehicle not found."
 
 def delete_vehicle(vehicles, id):
-    pass
+    for vehicle in vehicles:
+        if vehicle.id == id:
+            i = 0
+            vehicles.pop(i)
+            i += 1
+        
     return "Vehicle deleted successfully!"
 
 def main():
